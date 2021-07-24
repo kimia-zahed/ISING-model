@@ -1,7 +1,7 @@
 
-# coding: utf-8
 
-# In[6]:
+###########    Written by Fatemeh Zahed-Kachaee   ##############
+###########  copyright © July-2021 all rights reserved   ##############
 
 
 import numpy as np
@@ -9,8 +9,6 @@ import matplotlib.pyplot as plt
 import math
 from random import *
 
-
-# In[7]:
 
 
 l=32
@@ -22,8 +20,6 @@ a=np.array(np.arange(1.60,3.10,0.1))
 tetaList= np.append(tetaList , a)
 tetaList= np.append(tetaList , [3.30,3.60,3.90,4.20])
 
-# 
-# In[8]:
 
 
 def InitialConfiguration():
@@ -34,7 +30,7 @@ def Magnetization(mylist):
     for i in range(l):
         for j in range(l):
             m=m+mylist[i,j] 
-    return m #/(l*l)
+    return m
 
 def ReverseSpinMagnetization(mylist,i,j):
     return 2*mylist[i,j]
@@ -50,7 +46,6 @@ def ChangedSpinEnergy(myinput,i,j):
     return ee
 
 
-# In[9]:
 
 
 for t in tetaList:
@@ -101,7 +96,6 @@ plt.figure(figsize=(15,8))
 plt.plot(tetaList,energyListInT)
 plt.xlabel('Temprture')
 plt.ylabel('Energy')
-#plt.title('Temperature'+ str(t))
 plt.grid()
 plt.savefig('EperT.png')
 
@@ -109,7 +103,6 @@ plt.figure(figsize=(15,8))
 plt.plot(tetaList,magnetizationListInT)
 plt.xlabel('Temprture')
 plt.ylabel('Magnetization')
-#plt.title('Temperature'+ str(t))
 plt.grid()
 plt.savefig('MperT.png')
 
