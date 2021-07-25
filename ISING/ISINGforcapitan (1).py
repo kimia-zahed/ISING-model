@@ -17,10 +17,10 @@ l=32
 J=1
 energyListInT=[]
 magnetizationListInT=[]
-tetaList=np.array( [0.01,0.30,0.60,0.90,1.20])
-a=np.array(np.arange(1.60,3.10,0.1))
+tetaList=np.array( [0.01,0.30,0.60,0.90,1.20,1.60])
+a=np.array(np.arange(1.9,2.7,0.10))
 tetaList= np.append(tetaList , a)
-tetaList= np.append(tetaList , [3.30,3.60,3.90,4.20])
+tetaList= np.append(tetaList , [3.30,3.60,3.90,4.20,4.60, 5.10, 5.60, 6.10, 6.60, 7.10  ])
 
 # 
 # In[8]:
