@@ -1,7 +1,4 @@
 
-# coding: utf-8
-
-# In[6]:
 
 
 import numpy as np
@@ -9,8 +6,6 @@ import matplotlib.pyplot as plt
 import math
 from random import *
 
-
-# In[7]:
 
 
 l=32
@@ -23,8 +18,6 @@ tetaList= np.append(tetaList , a)
 tetaList= np.append(tetaList , [3.30,3.60,3.90,4.20,4.60, 5.10, 5.60, 6.10, 6.60, 7.10  ])
 
 # 
-# In[8]:
-
 
 def InitialConfiguration():
     return np.ones((l,l))
@@ -34,7 +27,7 @@ def Magnetization(mylist):
     for i in range(l):
         for j in range(l):
             m=m+mylist[i,j] 
-    return m #/(l*l)
+    return m 
 
 def ReverseSpinMagnetization(mylist,i,j):
     return 2*mylist[i,j]
@@ -48,9 +41,6 @@ def EnergyOfInitialConfiguration(mylist):
 def ChangedSpinEnergy(myinput,i,j):
     ee=(-J)*2*(myinput[i][j])*(myinput[i][(j+1)%l]+myinput[(i+1)%l][j]+myinput[i][(j-1)%l]+myinput[(i-1)%l][j])
     return ee
-
-
-# In[9]:
 
 
 for t in tetaList:
@@ -103,7 +93,6 @@ plt.figure(figsize=(15,8))
 plt.plot(tetaList,energyListInT)
 plt.xlabel('Temprture')
 plt.ylabel('Energy')
-#plt.title('Temperature'+ str(t))
 plt.grid()
 plt.savefig('EperT.png')
 
@@ -111,7 +100,6 @@ plt.figure(figsize=(15,8))
 plt.plot(tetaList,magnetizationListInT)
 plt.xlabel('Temprture')
 plt.ylabel('Magnetization')
-#plt.title('Temperature'+ str(t))
 plt.grid()
 plt.savefig('MperT.png')
 
